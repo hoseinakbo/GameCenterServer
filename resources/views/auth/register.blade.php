@@ -25,14 +25,30 @@
     <div class="card-item">
         <input type="text" placeholder="نام" name="name">
         <span class="fa fa-user" id="fa-icon"></span>
+        @if ($errors->has('name'))
+            <span class="help-block">
+                <strong>{{ $errors->first('name') }}</strong>
+            </span>
+        @endif
     </div>
     <div class="card-item">
         <input type="text" placeholder="ایمیل" name="email">
         <span class="fa fa-envelope" id="fa-icon"></span>
+
+        @if ($errors->has('email'))
+            <span class="help-block">
+                <strong>{{ $errors->first('email') }}</strong>
+            </span>
+        @endif
     </div>
     <div class="card-item">
         <input type="password" placeholder="رمز عبور" name="password">
         <span class="fa fa-lock" id="fa-icon"></span>
+        @if ($errors->has('password'))
+            <span class="help-block">
+                <strong>{{ $errors->first('password') }}</strong>
+            </span>
+        @endif
     </div>
     <div class="card-item">
         <input type="password" placeholder="تکرار رمز عبور" name="password_confirmation">

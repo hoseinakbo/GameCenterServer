@@ -9,7 +9,7 @@ input[type="text"]:focus {
 }
 
 .card {
-    height: 260px;
+    height: 280px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
@@ -65,4 +65,27 @@ input[type="text"]:focus {
 	background-color: #e3e3e3;
 	font: 14px Shabnam;
 	border-bottom: 1px solid #2d7aff;
+}
+.help-block{display:block;margin-top:5px;margin-bottom:10px;color:#a4aaae;
+    font: 11px Shabnam;}
+
+
+/* Hidding the radiobuttons & checkboxes */
+input[type="checkbox"] {
+    display: none;
+}
+/* Hidding the "check" status of inputs */
+input[type="checkbox"] + label .fa-check  {
+    display: none;
+}
+/* Styling the "check" status */
+input[type="checkbox"]:checked + label .fa-check {
+    display: block;
+    color: #bd4949;
+}
+/* Styling checkboxes */
+input[type="checkbox"]:checked + label .fa-check {
+    position: relative;
+    left: .125em;
+    bottom: .125em;
 }

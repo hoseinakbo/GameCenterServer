@@ -21,6 +21,8 @@ Route::get('/games/{title}/leaderboard', 'GameController@getLeaderboard');
 Route::get('/games/{title}/comments', 'GameController@getComments');
 Route::get('/games/{title}/related_games', 'GameController@getRelatedGames');
 Route::get('/games/{title}/gallery', 'GameController@getGallery');
+Route::get('/header', 'MainPageController@getHeaderTest');
+Route::get('/logout','auth\LoginController@logout');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

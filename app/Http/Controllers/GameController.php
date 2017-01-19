@@ -6,6 +6,7 @@ use App\Comment;
 use App\Game;
 use App\Record;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class GameController extends Controller
 {
@@ -26,18 +27,26 @@ class GameController extends Controller
     public function getLeaderboard($title)
     {
         $games = Game::where('title', '=', $title)->get();
-        $leaderboard = Record::with('player')->where('game_id', '=', $games[0]->id)->orderBy('score', 'DESC')->get();
+        $leaderboard = Record::with('player')->where('game_id', '=', $games[0]->id)->orderBy('score', 'DESC')->take(10)->get();
+
+        $userRecord=0;
+        if($user = Auth::user()) {
+            $userRecord = Record::with('player')->where('game_id', '=', $games[0]->id)->where('user_id', '=', $user->id)->get();
+        }
 
         $temp = ["leaderboard" => $leaderboard];
-        $response = ["ok" => true, "result" => $temp];
+        $response = ["ok" => true, "result" => $temp, "userRecord"=>$userRecord];
         $result = ["response" => $response];
         return $result;
     }
 
-    public function getComments($title)
+    public function getComments($title, Request $request)
     {
+        $offset = 0;
+        if ($request->has('offset'))
+            $offset = $request->get('offset');
         $games = Game::where('title', '=', $title)->get();
-        $comments = Comment::with('player')->with('game')->where('game_id', '=', $games[0]->id)->orderBy('created_at', 'DESC')->get();
+        $comments = Comment::with('player')->with('game')->where('game_id', '=', $games[0]->id)->orderBy('created_at', 'DESC')->skip($offset)->take(10)->get();
 
         $temp = ["comments" => $comments];
         $response = ["ok" => true, "result" => $temp];
@@ -63,10 +72,5 @@ class GameController extends Controller
         $response = ["ok" => true, "result" => $result];
         $result = ["response" => $response];
         return $result;
-    }
-
-    public function getGallery($title)
-    {
-
     }
 }
