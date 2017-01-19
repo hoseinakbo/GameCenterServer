@@ -24,6 +24,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'id', 'created_at','updated_at',
     ];
+
+    public function comments(){
+        return $this->hasMany(Comment::class,'player','email');
+    }
+    public function records(){
+        return $this->hasMany(Record::class,'player','email');
+    }
 }

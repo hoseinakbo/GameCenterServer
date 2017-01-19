@@ -13,11 +13,11 @@ class CreateCategoryGameTable extends Migration
      */
     public function up()
     {
-        Schema::table('category_game', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('category_game', function (Blueprint $table) {
             $table->integer('category_id');
             $table->integer('game_id');
-            $table->timestamps();
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('game_id')->references('id')->on('games');
         });
     }
 
