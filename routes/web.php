@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return 'hello';
 });
+
+Route::get('/games/{title}/header', 'GameController@getHeader');
+Route::get('/games/{title}/info', 'GameController@getInfo');
+Route::get('/games/{title}/leaderboard', 'GameController@getLeaderboard');
+Route::get('/games/{title}/comments', 'GameController@getComments');
+Route::get('/games/{title}/related_games', 'GameController@getRelatedGames');
+Route::get('/games/{title}/gallery', 'GameController@getGallery');

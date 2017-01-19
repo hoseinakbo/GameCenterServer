@@ -16,8 +16,8 @@ class CreateCategoryGameTable extends Migration
         Schema::create('category_game', function (Blueprint $table) {
             $table->integer('category_id');
             $table->integer('game_id');
-            $table->foreign('category_id')->references('id')->on('categories');
-            $table->foreign('game_id')->references('id')->on('games');
+//            $table->foreign('category_id')->references('id')->on('categories');
+//            $table->foreign('game_id')->references('id')->on('games');
         });
     }
 

@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'password',
     ];
 
     /**
@@ -24,13 +24,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'id', 'created_at','updated_at',
+        'password', 'remember_token', 'id', 'created_at','updated_at', 'email',
     ];
 
     public function comments(){
-        return $this->hasMany(Comment::class,'player','email');
+        return $this->hasMany(Comment::class,'id','user_id');
     }
     public function records(){
-        return $this->hasMany(Record::class,'player','email');
+        return $this->hasMany(Record::class,'id','user_id');
     }
 }
