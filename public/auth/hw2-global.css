@@ -1,0 +1,123 @@
+/* 	global css rules in hw2 pages like font-family (@font-face), boxes, and login-register inputs
+	author: 9231003;
+	date: dd-mm-yy;
+	version: 0.1;
+*/
+#header {
+	background-color: #4d4d4d;
+	color: white;
+    padding: 3px;
+    box-shadow: 0 2.5px 5px hsla(0, 0%, 0%, 0.1);
+    height: 30px;
+}
+
+.card {
+	margin: 70px auto;
+	margin-bottom: 0;
+	background-color: white;
+	color: grey;
+    padding: 3px;
+    box-shadow: 0px 1px 15px -4px black;
+    height: 260px;
+    width: 300px;
+    border-radius: 2px;
+}
+
+#fa-icon {
+	/*vertical-align: center;*/
+}
+
+input[type="text"] {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: none;
+	border-bottom: solid 2px #c9c9c9;
+	transition: border 0.3s;
+	font-family: Shabnam;
+	direction:RTL;
+	/*color: #d2d4d3;*/
+	color: black;
+	width: 220px;
+}
+input[type="text"]:focus {
+	outline: none;
+ 	border-bottom: solid 2px #bd4949;
+}
+
+
+input[type="password"] {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: none;
+	border-bottom: solid 2px #c9c9c9;
+	transition: border 0.3s;
+	font-family: Shabnam;
+	direction:RTL;
+	/*color: #d2d4d3;*/
+	color: black;
+	width: 220px;
+}
+input[type="password"]:focus {
+	outline: none;
+	border-bottom: solid 2px #bd4949;
+}
+
+body {
+	margin: 0;
+	background-color: #4075a5;
+	font-family: Shabnam;
+}
+
+#header-icon {
+	margin-top: 0px;
+	margin-bottom: 0;
+	padding-left: 15%;
+	float: left;
+}
+
+#header-title {
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: right;
+	padding-right: 15%;
+	font-size: 1.3em;
+	float: right;
+	font-weight: bold;
+}
+
+#card-header {
+	font-weight: bold;
+	margin: 20px auto;
+	text-align: center;
+}
+
+.card-item {
+	text-align: center;
+}
+
+@font-face {
+  font-family: Shabnam;
+  src: url('Shabnam.eot');
+  src: url('Shabnam.eot?#iefix') format('embedded-opentype'),
+       url('Shabnam.woff') format('woff'),
+       url('Shabnam.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Shabnam;
+  src: url('Shabnam-Bold.eot');
+  src: url('Shabnam-Bold.eot?#iefix') format('embedded-opentype'),
+       url('Shabnam-Bold.woff') format('woff'),
+       url('Shabnam-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Shabnam;
+  src: url('Shabnam-Light.eot');
+  src: url('Shabnam-Light.eot?#iefix') format('embedded-opentype'),
+       url('Shabnam-Light.woff') format('woff'),
+       url('Shabnam-Light.ttf') format('truetype');
+  font-weight: 300;
+}

@@ -1,0 +1,45 @@
+/* 	css rules for register.html page
+	author: 1111111;
+	date: dd-mm-yy;
+	version: 0.1;
+*/
+
+.signup-button {
+    background-color: #2879ff;
+    color: white;
+    padding: 6px 20px;
+    margin: 20px 0;
+    margin-bottom: 0px;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+    font-family: Shabnam;
+}
+.signup-button:hover {
+	background-color: #5d98fa;
+    box-shadow: 0px 1px 15px -4px black;
+}
+
+.card {
+    height: 300px;
+}
+
+/* Hidding the radiobuttons & checkboxes */
+input[type="checkbox"] {
+    display: none;
+}
+/* Hidding the "check" status of inputs */
+input[type="checkbox"] + label .fa-check  {
+	display: none;
+}
+/* Styling the "check" status */
+input[type="checkbox"]:checked + label .fa-check {
+display: block;
+color: #bd4949;
+}
+/* Styling checkboxes */
+input[type="checkbox"]:checked + label .fa-check {
+position: relative;
+left: .125em;
+bottom: .125em;
+}

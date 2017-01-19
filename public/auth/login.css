@@ -1,0 +1,68 @@
+/* 	css rules for login.html page
+	author: 9231003;
+	date: dd-mm-yy;
+	version: 0.1;
+*/
+
+input[type="text"]:focus {
+	
+}
+
+.card {
+    height: 260px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.login-button {
+    background-color: #d9346c;
+    color: white;
+    padding: 6px 20px;
+    margin: 20px 0;
+    margin-bottom: 0px;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+    font-family: Shabnam;
+}
+.login-button:hover {
+	background-color: #de4e7f;
+    box-shadow: 0px 1px 15px -4px black;
+}
+
+.pass-forgot-button {
+    color: #808080;
+    padding: 0px 0px;
+    border: none;
+    cursor: pointer;
+    width: 68px;
+	background-color: white;
+	font: 11px Shabnam;
+	border-bottom: 1px solid #808080;
+}
+
+#card-footer {
+    border-radius: 2px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+	margin: 0 auto;
+	background: #e3e3e3;
+	width: 286px;
+    padding: 10px;
+    padding-bottom: 15px;
+}
+
+#card-footer-text {
+	color: #808080;
+	font: 14px Shabnam;
+}
+#signup-button {
+    color: #2d7aff;
+    padding: 0px 0px;
+    border: none;
+    cursor: pointer;
+    text-decoration:none;
+	background-color: #e3e3e3;
+	font: 14px Shabnam;
+	border-bottom: 1px solid #2d7aff;
+}
