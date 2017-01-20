@@ -25,6 +25,10 @@ class SearchController extends Controller
                 $query->orWhere($column, 'LIKE', '%'.$q.'%');
             }
         })->orderBy('updated_at', 'desc')->get();
-        return $results;
+
+        $temp = ["games" => $results];
+        $response = ["ok" => true, "result" => $temp];
+        $result = ["response" => $response];
+        return $result;
     }
 }

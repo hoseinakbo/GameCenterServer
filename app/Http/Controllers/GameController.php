@@ -7,6 +7,7 @@ use App\Game;
 use App\Record;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 class GameController extends Controller
 {
@@ -72,5 +73,12 @@ class GameController extends Controller
         $response = ["ok" => true, "result" => $result];
         $result = ["response" => $response];
         return $result;
+    }
+
+    public function addComment($title) {
+        return 'yo: '.$title;
+    }
+    public function getTempCommentPage($title) {
+        return view('addCommentsTest');
     }
 }

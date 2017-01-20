@@ -6,6 +6,7 @@ use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Mail;
 
 class RegisterController extends Controller
 {
@@ -67,5 +68,12 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    protected function registered($request, $user)
+    {
+        Mail::send('email.welcome', array('firstname'=>$user->name), function($message) use ($user){
+            $message->to($user->email, $user->name)->subject('Welcome to Amirkabir studio!');
+        });
     }
 }

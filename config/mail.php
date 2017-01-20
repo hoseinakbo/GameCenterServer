@@ -55,9 +55,13 @@ return [
     |
     */
 
+//    'from' => [
+//        'address' => 'hello@example.com',
+//        'name' => 'Example',
+//    ],
     'from' => [
-        'address' => 'hello@example.com',
-        'name' => 'Example',
+        'address' => env('MAIL_FROM_ADDRESS', 'ps4testps4test@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'Hosein'),
     ],
 
     /*
