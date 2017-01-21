@@ -1,0 +1,80 @@
+body {
+  color: black;
+}
+.navbar {
+	position: absolute;
+	top: 0px;
+	color: white;
+}
+a {
+	color: white;
+}
+.btn-trailer {
+	color: white;
+}
+#sync1 .carousel-item{
+    background: black;
+    background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7));
+    padding: 80px 0px;
+    color: #FFF;
+    text-align: center;
+	margin: 0;
+	background-size: cover;
+    height: 500px;
+    position: relative;
+}
+#sync2 .carousel-item{
+    background: black;
+    background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7));
+    padding: 10px 0px;
+    color: #FFF;
+    text-align: center;
+    cursor: pointer;
+	margin: 0;
+    position: relative;
+}
+#sync2 .carousel-item h1{
+  font-size: 18px;
+}
+#sync2 .synced .carousel-item{
+  background: #0c83e7;
+}
+#sync1 .carousel-img {
+	z-index: -1;
+	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 100%;
+}
+#sync2 .carousel-img {
+	z-index: -1;
+	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 100%;
+}
+
+#comments-and-guides {
+	background-color: #f9f9f9;
+}
+#join-us{
+    padding: 60px 0px;
+    color: white;
+    position: relative;
+    height: 370px;
+    background: linear-gradient( rgba(36,154,216,0.82), rgba(36,154,216,0.82) ), url('../assets/pics/games/assassins-creed-4.jpg');
+    background-size: 100%;
+}
+#join-us p {
+	margin-top: 20px;
+	margin-bottom: 40px;
+	font-size: 22px;
+}
+#join-us .joins-us-img {
+	z-index: -1;
+	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 100%;
+  	clip: rect(0px,99999999px,370px,0px);
+}

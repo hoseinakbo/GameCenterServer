@@ -16,6 +16,9 @@ class MainPageController extends Controller
     }
 
     public function getHomePage() {
+        return view('store\homepage');
+    }
+    public function getHomePageInfo() {
         $slider = Game::with('categories')->orderBy('rate', 'desc')->take(10)->get();
         $new_games = Game::with('categories')->orderBy('updated_at', 'desc')->take(12)->get();
         $comments = Comment::with('player')->with('game')->orderBy('updated_at', 'desc')->take(30)->get();

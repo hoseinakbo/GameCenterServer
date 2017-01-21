@@ -11,6 +11,15 @@ use Illuminate\Support\Facades\Route;
 
 class GameController extends Controller
 {
+    public function getGamePage(Request $request)
+    {
+        $game = 0;
+        if ($request->has('game')){
+            $game = $request->get('game');
+        }
+        return view('store\gamepage', ['game' => $game]);
+    }
+
     public function getHeader($title) {
         $game = Game::with('categories')->where('title', '=', $title)->get();
 

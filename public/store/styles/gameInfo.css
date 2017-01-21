@@ -1,0 +1,77 @@
+body {
+  font-family: Shabnam;
+  direction: rtl;
+}
+
+.navbar {
+  background-color: white;
+  color: #7c7c7c;
+}
+
+#navbar a,
+#navbar .btn  {
+  color: #7c7c7c;
+}
+#navbar .btn {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+#page-content p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+#page-content h3 {
+    text-align: justify;
+    text-justify: inter-word;
+}
+#page-content .container {
+  padding-top: 20px;
+}
+#page-content #content-info img {
+  width: 100%;
+}
+
+#content-info {
+  /*display: none;*/
+}
+#content-comments {
+
+}
+
+.inlined {
+  display: inline;
+}
+.no-top-margin {
+  margin-top: 0px;
+}
+
+#content-comments .item-pic {
+    border-radius: 50%;
+    margin: 0px auto;
+    width: 45px; 
+    height: 45px;
+    overflow: hidden;
+}
+#content-comments .row-item {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#content-comments .comment-text {
+  color: #0098e4;
+}
+
+.grey-star {
+  color: #cfcfcf;
+}
+#content-rank .card {
+  margin: auto;
+}
+#content-rank #leaderboard-title {
+  background-color: #ebebeb;
+  height: 40px;
+}
+
+.grey-background {
+  background-color: #f9f9f9;
+}

@@ -10,7 +10,9 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+Route::get('/', 'MainPageController@getHomePage');
 
+Route::get('/games', 'GameController@getGamePage');
 Route::get('/games/{title}/header', 'GameController@getHeader');
 Route::get('/games/{title}/info', 'GameController@getInfo');
 Route::get('/games/{title}/leaderboard', 'GameController@getLeaderboard');
@@ -24,6 +26,7 @@ Route::get('/games_list', 'SearchController@getGamesList');
 
 Route::get('/header', 'MainPageController@getHeaderTest');
 Route::get('/homepage', 'MainPageController@getHomePage');
+Route::get('/homepageInfo', 'MainPageController@getHomePageInfo');
 Route::get('/verified', 'MainPageController@getVerifiedPage');
 
 Route::get('/logout','auth\LoginController@logout');
