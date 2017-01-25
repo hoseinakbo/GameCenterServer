@@ -19,8 +19,7 @@ Route::get('/games/{title}/leaderboard', 'GameController@getLeaderboard');
 Route::get('/games/{title}/comments', 'GameController@getComments');
 Route::get('/games/{title}/related_games', 'GameController@getRelatedGames');
 Route::get('/games/{title}/gallery', 'GameController@getGallery');
-Route::get('/games/{title}/tempcomments/addcomment', 'GameController@addComment');
-Route::get('/games/{title}/tempcomments', 'GameController@getTempCommentPage');
+Route::post('/games/{title}/addcomment', 'GameController@addComment');
 
 Route::get('/games_list', 'SearchController@getGamesList');
 

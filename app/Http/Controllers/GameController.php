@@ -7,6 +7,7 @@ use App\Game;
 use App\Record;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 class GameController extends Controller
@@ -84,10 +85,16 @@ class GameController extends Controller
         return $result;
     }
 
-    public function addComment($title) {
-        return 'yo: '.$title;
-    }
-    public function getTempCommentPage($title) {
-        return view('addCommentsTest');
+    public function addComment($title, Request $request) {
+        $game = Game::where('title', '=', $title)->get()[0];
+        $user = Auth::user();
+        DB::table('comments')->insert(
+            ['text' => e($request->all()['comment']),
+                'rate' => 3,
+                'date' => "131217",
+                'user_id' => $user->id,
+                'game_id' => $game->id]
+        );
+        return redirect()->back();
     }
 }

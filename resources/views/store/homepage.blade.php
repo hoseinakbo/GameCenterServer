@@ -71,7 +71,7 @@
 </div>
 <div id="sync2" class="owl-carousel">
     <div class="carousel-item">
-        <img src="{{asset('/store/assets/pics/games/cod-mw2-w2.jpg')}}" class="carousel-img">
+        <img  src="{{asset('/store/assets/pics/games/cod-mw2-w2.jpg')}}" class="carousel-img">
         <h1>1</h1>
     </div>
     <div class="carousel-item">
@@ -86,36 +86,91 @@
 
 <div id="newest-games">
     <div class="container">
-        <div id="owl-demo new_game-items" class="owl-carousel">
-            {{--<div class="item new_game-item"><img class="lazyOwl"></div>--}}
-            {{--<div class="item new_game-item"><img class="lazyOwl"></div>--}}
-            {{--<div class="item new_game-item"><img class="lazyOwl"></div>--}}
-            {{--<div class="item new_game-item"><img class="lazyOwl"></div>--}}
-            {{--<div class="item new_game-item"><img class="lazyOwl"></div>--}}
-            {{--<div class="item new_game-item"><img class="lazyOwl"></div>--}}
-            {{--<div class="item new_game-item"><img class="lazyOwl"></div>--}}
-            {{--<div class="item new_game-item"><img class="lazyOwl"></div>--}}
-            {{--<div class="item new_game-item"><img class="lazyOwl"></div>--}}
-            {{--<div class="item new_game-item"><img class="lazyOwl"></div>--}}
+        <h2 class="text-right">جدیدترین بازی ها</h2>
+        <div id="games-div" class="container">
         </div>
+
+
+        {{--<div id="owl-demo new_game-items" class="owl-carousel">--}}
+            {{--<div class="item new_game-item"><img data-src="{{asset('/store/assets/pics/games/cod-mw2-w2.jpg')}}" class="lazyOwl"></div>--}}
+            {{--<div class="item new_game-item"><img data-src="{{asset('/store/assets/pics/games/cod-mw2-w2.jpg')}}" class="lazyOwl"></div>--}}
+            {{--<div class="item new_game-item"><img data-src="{{asset('/store/assets/pics/games/cod-mw2-w2.jpg')}}" class="lazyOwl"></div>--}}
+            {{--<div class="item new_game-item"><img data-src="{{asset('/store/assets/pics/games/cod-mw2-w2.jpg')}}" class="lazyOwl"></div>--}}
+            {{--<div class="item new_game-item"><img data-src="{{asset('/store/assets/pics/games/cod-mw2-w2.jpg')}}" class="lazyOwl"></div>--}}
+            {{--<div class="item new_game-item"><img data-src="{{asset('/store/assets/pics/games/cod-mw2-w2.jpg')}}" class="lazyOwl"></div>--}}
+            {{--<div class="item new_game-item"><img data-src="{{asset('/store/assets/pics/games/cod-mw2-w2.jpg')}}" class="lazyOwl"></div>--}}
+            {{--<div class="item new_game-item"><img data-src="{{asset('/store/assets/pics/games/cod-mw2-w2.jpg')}}" class="lazyOwl"></div>--}}
+            {{--<div class="item new_game-item"><img data-src="{{asset('/store/assets/pics/games/cod-mw2-w2.jpg')}}" class="lazyOwl"></div>--}}
+            {{--<div class="item new_game-item"><img data-src="{{asset('/store/assets/pics/games/cod-mw2-w2.jpg')}}" class="lazyOwl"></div>--}}
+        {{--</div>--}}
     </div>
 </div>
 
 <div id="comments-and-guides">
-    <div class="container">
+    <div class="container" id="content-comments">
         <h2 class="text-right">نظرات کاربران و راهنمای بازی ها</h2>
         <p class="text-right">لورم ایپسوم یا طرح نما به متنی آزمایشی و بی معنی</p>
         <p class="text-right">.در صنعت چاپ، صفحه آرایی و طراحی گرافیک گفته می شود</p>
         <div class="row">
-            <div class="col-md-6">
-                <h3>Heading</h3>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <div class="col-md-6 text-right">
+                <h3>آخرین راهنماهای بازی</h3>
+                <div class='row row-item'>
+                    <div class="col-md-10">
+                        <div><p class="inlined">22 آذر 1395</p></div>
+                        <div><h4 class="inlined comment-text">ali: fdslfaldksfm</h4></div>
+                    </div>
+                    <div class="col-md-2 text-left">
+                        <img src="{{asset('/store/assets/pics/kareem.jpg')}}" class="item-pic">
+                    </div>
+                </div>
+                <div class='row row-item'>
+                    <div class="col-md-10">
+                        <div><p class="inlined">22 آذر 1395</p></div>
+                        <div><h4 class="inlined comment-text">ali: fdslfaldksfm</h4></div>
+                    </div>
+                    <div class="col-md-2 text-left">
+                        <img src="{{asset('/store/assets/pics/kareem.jpg')}}" class="item-pic">
+                    </div>
+                </div>
+                <div class='row row-item'>
+                    <div class="col-md-10">
+                        <div><p class="inlined">22 آذر 1395</p></div>
+                        <div><h4 class="inlined comment-text">ali: fdslfaldksfm</h4></div>
+                    </div>
+                    <div class="col-md-2 text-left">
+                        <img src="{{asset('/store/assets/pics/kareem.jpg')}}" class="item-pic">
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-                <h3>Heading</h3>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <div id="comments-div" class="col-md-6 text-right">
+                <h3>نظرات و گفت و گوها</h3>
+                {{--<div class='row row-item'>--}}
+                    {{--<div class="col-md-10">--}}
+                        {{--<div><p class="inlined">22 آذر 1395</p></div>--}}
+                        {{--<div><h4 class="inlined comment-text">ali: fdslfaldksfm</h4></div>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-2 text-left">--}}
+                        {{--<img src="{{asset('/store/assets/pics/kareem.jpg')}}" class="item-pic">--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class='row row-item'>--}}
+                    {{--<div class="col-md-10">--}}
+                        {{--<div><p class="inlined">22 آذر 1395</p></div>--}}
+                        {{--<div><h4 class="inlined comment-text">ali: fdslfaldksfm</h4></div>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-2 text-left">--}}
+                        {{--<img src="{{asset('/store/assets/pics/kareem.jpg')}}" class="item-pic">--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class='row row-item'>--}}
+                    {{--<div class="col-md-10">--}}
+                        {{--<div><p class="inlined">22 آذر 1395</p></div>--}}
+                        {{--<div><h4 class="inlined comment-text">ali: fdslfaldksfm</h4></div>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-2 text-left">--}}
+                        {{--<img src="{{asset('/store/assets/pics/kareem.jpg')}}" class="item-pic">--}}
+                    {{--</div>--}}
+                {{--</div>--}}
             </div>
         </div>
     </div>
@@ -143,7 +198,7 @@
                     <div class="col-md-2 text-right"><button type="button" class="btn btn-link">سوالات متداول</button></div>
                     <div class="col-md-2 text-right"><button type="button" class="btn btn-link">ارتباط با سازندگان</button></div>
                     <div class="col-md-2 text-right"><button type="button" class="btn btn-link">درباره ما</button></div>
-                    <div class="col-md-2 text-right"><a href="{{url('/homepage')}}"><button type="button" class="btn btn-link">صفحه اصلی</button></div>
+                    <div class="col-md-2 text-right"><a href="{{url('/homepage')}}"><button type="button" class="btn btn-link">صفحه اصلی</button></a></div>
                 </div>
             </div>
         </div>
@@ -161,8 +216,8 @@
     </div>
 </div>
 
-<script src="{{asset('/store/js/carousel-implementer.js')}}"></script>
 <script src="{{asset('/store/js/home.js')}}"></script>
+<script src="{{asset('/store/js/carousel-implementer.js')}}"></script>
 
 </body>
 

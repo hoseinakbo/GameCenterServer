@@ -46,21 +46,6 @@ body {
   margin-top: 0px;
 }
 
-#content-comments .item-pic {
-    border-radius: 50%;
-    margin: 0px auto;
-    width: 45px; 
-    height: 45px;
-    overflow: hidden;
-}
-#content-comments .row-item {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-#content-comments .comment-text {
-  color: #0098e4;
-}
-
 .grey-star {
   color: #cfcfcf;
 }

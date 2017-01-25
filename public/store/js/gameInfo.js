@@ -1,21 +1,19 @@
-// function setGameHeader() {
-//   var xhttp = new XMLHttpRequest();
-//   xhttp.onreadystatechange = process;
-//   xhttp.open("GET", "http://api.ie.ce-it.ir/F95/home.json", true);
-//   xhttp.send();
-// }
-// function process() {
-//     if (this.readyState == 4 && this.status == 200) {
-//      	console.log(this.responseText);
-//     }
-//     // else {
-//     // 	console.log("Ajax Error");
-//     // }
-// }
-// setGameHeader();
+function getParameterByName(name, url) {
+    if (!url) {
+        url = window.location.href;
+    }
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+var gameTitle = getParameterByName('game');
 
 // $(document).ready(function(){
-        $.getJSON("http://api.ie.ce-it.ir/F95/games/بازی Dishonored 2/header.json", function(result){
+        $.getJSON("http://api.ie.ce-it.ir/F95/games/"+gameTitle+"/header.json", function(result){
         // $.getJSON("http://api.ie.ce-it.ir/F95/games/بازی The Last Guardian/header.json", function(result){
             $.each(result, function(i, field){
                 $("#header-title").html(field.result.game.title);
@@ -38,8 +36,7 @@
     //     });
 // });
 
-function showInfoTab(gameTitle) {
-	console.log(gameTitle);
+function showInfoTab() {
 	$("#content-info").css("display", "block");
 	$("#content-rank").css("display", "none");
 	$("#content-comments").css("display", "none");

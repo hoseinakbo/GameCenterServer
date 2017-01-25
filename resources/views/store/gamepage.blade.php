@@ -37,7 +37,11 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="{{url('/login')}}"><i class="fa fa-user fa-2x" aria-hidden="true"></i><button type="button" class="btn btn-link btn-trailer">ورود</button></a></li>
+                @if (Auth::check())
+                    <li><a href="{{url('/logout')}}"><i class="fa fa-user fa-2x" aria-hidden="true"></i><button type="button" class="btn btn-link btn-trailer">خروج</button></a></li>
+                @else
+                    <li><a href="{{url('/login')}}"><i class="fa fa-user fa-2x" aria-hidden="true"></i><button type="button" class="btn btn-link btn-trailer">ورود</button></a></li>
+                @endif
             </ul>
             <form class="navbar-form navbar-left left-inner-addon">
                 <i class="fa fa-search"></i>
@@ -73,7 +77,7 @@
             <div class="col-md-2 text-center game-info-tab" id="similar-tab"><button onclick="showSimilarTab()" type="button" class="btn btn-link"><h4>بازی های مشابه</h4></button></div>
             <div class="col-md-2 text-center game-info-tab" id="comments-tab"><button onclick="showCommentsTab()" type="button" class="btn btn-link"><h4>نظرات کاربران</h4></button></div>
             <div class="col-md-2 text-center game-info-tab" id="rank-tab"><button onclick="showRankTab()" type="button" class="btn btn-link"><h4>رتبه بندی و امتیازات</h4></button></div>
-            <div class="col-md-2 text-center game-info-tab" id="info-tab"><button onclick="showInfoTab({{ $game }})" type="button" class="btn btn-link"><h4>اطلاعات بازی</h4></button></div>
+            <div class="col-md-2 text-center game-info-tab" id="info-tab"><button onclick="showInfoTab()" type="button" class="btn btn-link"><h4>اطلاعات بازی</h4></button></div>
         </div>
     </div>
 </div>
@@ -188,10 +192,17 @@
         <div id="content-comments" style="display: none">
 
             <div class="row">
-                <div class="col-md-2 text-left">
-                    <button type="button" class="btn btn-info">نظر دهید</button>
+                <div class="col-md-4 text-left">
+                    @if(Auth::check())
+                        <form method="POST" action="{{url('/games/'.$game.'/addcomment')}}">
+                            {{ csrf_field() }}
+                            {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
+                            <input type="text" placeholder="نظر جدید" name="comment">
+                            <button type="submit"  class="btn btn-info">نظر دهید</button>
+                        </form>
+                    @endif
                 </div>
-                <div class="col-md-10">
+                <div class="col-md-8">
                     <h2 class="inlined">نظرات کاربران</h2>
                     <p class="inlined">(84 کاربر)</p>
                 </div>
@@ -257,6 +268,110 @@
         <div id="content-similar">
             <h2 class="text-right no-top-margin">بازی های مشابه</h2>
             <hr>
+            <div class="row">
+            <div class="game-card col-md-3">
+                <img src="{{asset('/store/assets/pics/games/uncharted4.jpg')}}">
+                <div class="game-card-title text-right">Uncharted 4</div>
+                <div class="game-card-category text-right">اکشن، تیراندازی</div>
+                <div class="game-card-stars text-right">
+                    <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="game-card col-md-3">
+                <img src="{{asset('/store/assets/pics/games/uncharted4.jpg')}}">
+                <div class="game-card-title text-right">Uncharted 4</div>
+                <div class="game-card-category text-right">اکشن، تیراندازی</div>
+                <div class="game-card-stars text-right">
+                    <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="game-card col-md-3">
+                <img src="{{asset('/store/assets/pics/games/uncharted4.jpg')}}">
+                <div class="game-card-title text-right">Uncharted 4</div>
+                <div class="game-card-category text-right">اکشن، تیراندازی</div>
+                <div class="game-card-stars text-right">
+                    <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="game-card col-md-3">
+                <img src="{{asset('/store/assets/pics/games/uncharted4.jpg')}}">
+                <div class="game-card-title text-right">Uncharted 4</div>
+                <div class="game-card-category text-right">اکشن، تیراندازی</div>
+                <div class="game-card-stars text-right">
+                    <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+            </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="game-card col-md-3">
+                    <img src="{{asset('/store/assets/pics/games/uncharted4.jpg')}}">
+                    <div class="game-card-title text-right">Uncharted 4</div>
+                    <div class="game-card-category text-right">اکشن، تیراندازی</div>
+                    <div class="game-card-stars text-right">
+                        <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="game-card col-md-3">
+                    <img src="{{asset('/store/assets/pics/games/uncharted4.jpg')}}">
+                    <div class="game-card-title text-right">Uncharted 4</div>
+                    <div class="game-card-category text-right">اکشن، تیراندازی</div>
+                    <div class="game-card-stars text-right">
+                        <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="game-card col-md-3">
+                    <img src="{{asset('/store/assets/pics/games/uncharted4.jpg')}}">
+                    <div class="game-card-title text-right">Uncharted 4</div>
+                    <div class="game-card-category text-right">اکشن، تیراندازی</div>
+                    <div class="game-card-stars text-right">
+                        <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="game-card col-md-3">
+                    <img src="{{asset('/store/assets/pics/games/uncharted4.jpg')}}">
+                    <div class="game-card-title text-right">Uncharted 4</div>
+                    <div class="game-card-category text-right">اکشن، تیراندازی</div>
+                    <div class="game-card-stars text-right">
+                        <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="game-card col-md-3">
+                    <img src="{{asset('/store/assets/pics/games/uncharted4.jpg')}}">
+                    <div class="game-card-title text-right">Uncharted 4</div>
+                    <div class="game-card-category text-right">اکشن، تیراندازی</div>
+                    <div class="game-card-stars text-right">
+                        <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="game-card col-md-3">
+                    <img src="{{asset('/store/assets/pics/games/uncharted4.jpg')}}">
+                    <div class="game-card-title text-right">Uncharted 4</div>
+                    <div class="game-card-category text-right">اکشن، تیراندازی</div>
+                    <div class="game-card-stars text-right">
+                        <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="game-card col-md-3">
+                    <img src="{{asset('/store/assets/pics/games/uncharted4.jpg')}}">
+                    <div class="game-card-title text-right">Uncharted 4</div>
+                    <div class="game-card-category text-right">اکشن، تیراندازی</div>
+                    <div class="game-card-stars text-right">
+                        <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="game-card col-md-3">
+                    <img src="{{asset('/store/assets/pics/games/uncharted4.jpg')}}">
+                    <div class="game-card-title text-right">Uncharted 4</div>
+                    <div class="game-card-category text-right">اکشن، تیراندازی</div>
+                    <div class="game-card-stars text-right">
+                        <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="content-pics">
             <h2 class="text-right no-top-margin">عکس ها و ویدئوها</h2>
